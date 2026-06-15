@@ -335,8 +335,73 @@ Benefits:
 
 ---
 
-# Technology Stack
 
+## Prerequisites
+
+| Tool | Version | Purpose |
+|------|---------|---------|
+| Python | 3.10+ | Runtime |
+| PostgreSQL | 16.x | Database |
+| Ollama | Latest | Local LLM inference |
+
+---
+
+## Quick Start
+
+### 1. Install Python dependencies
+
+```bash
+cd NIC_TESt-main-backend
+python -m venv venv
+source venv/bin/activate      
+pip install -r requirements.txt
+```
+
+### 2. Configure environment
+
+```bash
+cp .env.example .env
+```
+
+### 3. Set up PostgreSQL
+
+```sql
+CREATE DATABASE querybridge;
+```
+
+Then seed the demo tables:
+
+```bash
+python db.py
+```
+
+### 4. Pull an Ollama model
+
+```bash
+ollama pull llama3         
+# or
+ollama pull qwen2.5-coder  
+# or
+ollama pull mistral     
+```
+
+### 5. Start Ollama
+
+```bash
+ollama serve
+```
+
+### 6. Start the Flask server
+
+```bash
+
+python -m uvicorn server:app --reload --port 8001
+```
+
+The server starts on `http://127.0.0.1:8001`.
+
+---
+# Technology Stack
 ## Frontend
 
 * React
