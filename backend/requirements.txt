@@ -1,0 +1,8 @@
+flask==3.1.1
+flask-cors==5.0.0
+psycopg2-binary==2.9.10
+requests==2.32.3
+python-dotenv==1.0.1
+asgiref==3.11.1
+cryptography==48.0.0
+sqlglot==30.11.0
