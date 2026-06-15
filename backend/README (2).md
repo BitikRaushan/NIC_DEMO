@@ -90,10 +90,11 @@ ollama serve
 ### 6. Start the Flask server
 
 ```bash
-python app.py
+
+python -m uvicorn server:app --reload --port 8001
 ```
 
-The server starts on `http://localhost:5000`.
+The server starts on `http://127.0.0.1:8001`.
 
 ---
 
